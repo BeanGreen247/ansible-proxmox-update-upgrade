@@ -1,0 +1,13 @@
+# group_vars/all/example_of_main.yml
+# Copy this file to group_vars/all/main.yml and fill in your values.
+# main.yml is gitignored — never commit real credentials.
+
+ansible_become: true
+ansible_become_method: sudo
+ansible_become_password: "{{ vault_become_password }}"
+
+# Generate with:
+#   ansible-vault encrypt_string --name 'vault_become_password' --vault-id default@prompt 'your_sudo_password'
+vault_become_password: !vault |
+  $ANSIBLE_VAULT;1.1;AES256
+  your_encrypted_string_here

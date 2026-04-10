@@ -1,0 +1,8 @@
+# Ansible credentials — never commit real values
+group_vars/all/main.yml
+
+# Ansible retry files
+*.retry
+
+# VS Code
+.vscode/
