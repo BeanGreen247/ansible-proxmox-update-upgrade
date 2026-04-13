@@ -1,5 +1,6 @@
 # Ansible credentials — never commit real values
 group_vars/all/main.yml
+host_vars/*/vault.yml
 
 # Ansible retry files
 *.retry
