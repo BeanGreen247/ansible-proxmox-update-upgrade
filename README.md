@@ -1,3 +1,8 @@
+> [!WARNING]
+> **This repository has been consolidated.**
+> Development continues at [BeanGreen247/ansible-proxmox](https://github.com/BeanGreen247/ansible-proxmox), which combines this repo with [ansible-proxmox-ve-usage-status](https://github.com/BeanGreen247/ansible-proxmox-ve-usage-status) and [proxmox-ve-vms-ansible](https://github.com/BeanGreen247/proxmox-ve-vms-ansible) into a single workspace.
+> This repo is archived and will no longer receive updates.
+
 # ansible-proxmox-update-upgrade
 
 An Ansible playbook that mass-updates and upgrades all Proxmox LXC containers and VMs. It automatically detects the package manager on each host, runs the appropriate commands, reports a per-host upgrade summary, and reboots hosts that require it.
