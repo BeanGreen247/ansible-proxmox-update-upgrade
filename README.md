@@ -209,8 +209,8 @@ lxc-prometheus  ansible_port=22 ansible_host=192.168.0.248 ansible_user=ansibleu
 lxc-grafana     ansible_port=22 ansible_host=192.168.0.247 ansible_user=ansibleuser ansible_ssh_private_key_file=~/.ssh/id_rsa
 
 [vms]
-vm-debian       ansible_port=22 ansible_host=192.168.0.201 ansible_user=ansibleuser ansible_ssh_private_key_file=~/.ssh/id_rsa
-vm-alpine       ansible_port=22 ansible_host=192.168.0.202 ansible_user=ansibleuser ansible_ssh_private_key_file=~/.ssh/id_rsa
+vm-debian-hostname       ansible_port=22 ansible_host=192.168.0.201 ansible_user=ansibleuser ansible_ssh_private_key_file=~/.ssh/id_rsa
+vm-alpine-hostname       ansible_port=22 ansible_host=192.168.0.202 ansible_user=ansibleuser ansible_ssh_private_key_file=~/.ssh/id_rsa
 
 [all:children]
 lxcs

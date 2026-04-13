@@ -15,9 +15,7 @@
 
   tasks:
 
-  # ------------------------------------------------------------------ #
-  #  APT  (Debian / Ubuntu)                                             #
-  # ------------------------------------------------------------------ #
+  #  APT  (Debian / Ubuntu)
 
   - name: "[apt] Update package cache"
     ansible.builtin.apt:
@@ -54,9 +52,7 @@
         {{ apt_upgrade_result.stdout | default('(no output)') }}
     when: ansible_pkg_mgr == "apt"
 
-  # ------------------------------------------------------------------ #
-  #  APK  (Alpine Linux)                                                #
-  # ------------------------------------------------------------------ #
+  #  APK  (Alpine Linux)
 
   - name: "[apk] Update package index"
     ansible.builtin.command:
@@ -96,9 +92,7 @@
         {{ apk_upgrade_result.stdout | default('(no output)') }}
     when: ansible_pkg_mgr == "apk"
 
-  # ------------------------------------------------------------------ #
-  #  DNF  (RHEL / Fedora / CentOS Stream)                              #
-  # ------------------------------------------------------------------ #
+  #  DNF  (RHEL / Fedora / CentOS Stream)
 
   - name: "[dnf] Update package cache"
     ansible.builtin.command:
@@ -141,9 +135,7 @@
         {{ dnf_upgrade_result.results | default(['(no output)']) | join('\n') }}
     when: ansible_pkg_mgr == "dnf"
 
-  # ------------------------------------------------------------------ #
-  #  PACMAN  (Arch Linux)                                               #
-  # ------------------------------------------------------------------ #
+  #  PACMAN  (Arch Linux)
 
   - name: "[pacman] Sync package database"
     ansible.builtin.command:
@@ -185,9 +177,7 @@
         {{ pacman_upgrade_result.stdout | default('(no output)') }}
     when: ansible_pkg_mgr == "pacman"
 
-  # ------------------------------------------------------------------ #
-  #  Unsupported package manager — warn and skip                        #
-  # ------------------------------------------------------------------ #
+  #  Unsupported package manager — warn and skip
 
   - name: "Warn on unsupported package manager"
     ansible.builtin.debug:
@@ -195,9 +185,7 @@
         Host {{ inventory_hostname }} uses '{{ ansible_pkg_mgr }}' which is not handled by this playbook. Skipping.
     when: ansible_pkg_mgr not in ["apt", "apk", "dnf", "pacman"]
 
-  # ------------------------------------------------------------------ #
-  #  Reboot handling                                                    #
-  # ------------------------------------------------------------------ #
+  #  Reboot handling
 
   - name: "Check if reboot is required (apt)"
     ansible.builtin.stat:
